@@ -301,7 +301,7 @@ a {
     gap: var(--space-m);
 }
 
-/* Header */
+/* Footer */
 .footer {
     padding: var(--space-m) 0;
     text-align: center;
