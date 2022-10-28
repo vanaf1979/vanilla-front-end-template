@@ -1,0 +1,308 @@
+/*
+* -------------------------------------------------------------
+* Variables
+* -------------------------------------------------------------
+*/
+:root {
+    /* Fluit Type Scale:: https://utopia.fyi/type/calculator/ */
+    --step--2: clamp(0.69rem, calc(0.68rem + 0.05vw), 0.72rem);
+    --step--1: clamp(0.83rem, calc(0.81rem + 0.13vw), 0.90rem);
+    --step-0: clamp(1.00rem, calc(0.95rem + 0.24vw), 1.13rem);
+    --step-1: clamp(1.20rem, calc(1.12rem + 0.40vw), 1.41rem);
+    --step-2: clamp(1.44rem, calc(1.32rem + 0.62vw), 1.76rem);
+    --step-3: clamp(1.73rem, calc(1.54rem + 0.92vw), 2.20rem);
+    --step-4: clamp(2.07rem, calc(1.81rem + 1.31vw), 2.75rem);
+    --step-5: clamp(2.49rem, calc(2.12rem + 1.84vw), 3.43rem);
+
+    /* Fluit Space Scale:: https://utopia.fyi/space/calculator */
+    --space-3xs: clamp(0.25rem, calc(0.23rem + 0.12vw), 0.31rem);
+    --space-2xs: clamp(0.50rem, calc(0.48rem + 0.12vw), 0.56rem);
+    --space-xs: clamp(0.75rem, calc(0.70rem + 0.24vw), 0.88rem);
+    --space-s: clamp(1.00rem, calc(0.95rem + 0.24vw), 1.13rem);
+    --space-m: clamp(1.50rem, calc(1.43rem + 0.37vw), 1.69rem);
+    --space-l: clamp(2.00rem, calc(1.90rem + 0.49vw), 2.25rem);
+    --space-xl: clamp(3.00rem, calc(2.85rem + 0.73vw), 3.38rem);
+    --space-2xl: clamp(4.00rem, calc(3.80rem + 0.98vw), 4.50rem);
+    --space-3xl: clamp(6.00rem, calc(5.71rem + 1.46vw), 6.75rem);
+    --space-3xs-2xs: clamp(0.25rem, calc(0.13rem + 0.61vw), 0.56rem);
+    --space-2xs-xs: clamp(0.50rem, calc(0.35rem + 0.73vw), 0.88rem);
+    --space-xs-s: clamp(0.75rem, calc(0.60rem + 0.73vw), 1.13rem);
+    --space-s-m: clamp(1.00rem, calc(0.73rem + 1.34vw), 1.69rem);
+    --space-m-l: clamp(1.50rem, calc(1.21rem + 1.46vw), 2.25rem);
+    --space-l-xl: clamp(2.00rem, calc(1.46rem + 2.68vw), 3.38rem);
+    --space-xl-2xl: clamp(3.00rem, calc(2.41rem + 2.93vw), 4.50rem);
+    --space-2xl-3xl: clamp(4.00rem, calc(2.93rem + 5.37vw), 6.75rem);
+
+    /* Layout variables */
+    --layout-width: 62.5rem;
+
+    /* Color variables */
+    --clr-light: #efefef;
+    --clr-dark: #111111;
+
+    /* Font variables */
+    --font-family: 'Open Sans', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --clr-light: #111111;
+        --clr-dark: #efefef;
+    }
+}
+
+/*
+* -------------------------------------------------------------
+* Reset css
+* https://piccalil.li/blog/a-modern-css-reset/
+* -------------------------------------------------------------
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+img,
+picture,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/*
+* -------------------------------------------------------------
+* Globals
+* -------------------------------------------------------------
+*/
+body {
+    background-color: var(--clr-light);
+    font-family: var(--font-family);
+    font-size: var(--step-0);
+    color: var(--clr-dark);
+    line-height: 1.4em;
+}
+
+/*
+* -------------------------------------------------------------
+* Typography
+* -------------------------------------------------------------
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.1em;
+}
+
+h1 {
+    font-size: var(--step-5);
+}
+
+h2 {
+    font-size: var(--step-4);
+}
+
+h3 {
+    font-size: var(--step-3);
+}
+
+h3 {
+    font-size: var(--step-2);
+}
+
+h3 {
+    font-size: var(--step-1);
+}
+
+h3 {
+    font-size: var(--step-1);
+}
+
+a {
+    color: inherit;
+}
+
+/*
+* -------------------------------------------------------------
+* A11y
+* -------------------------------------------------------------
+*/
+.skip-to-content-link {
+    padding: var(--space-xs) var(--space-s);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50% -100%;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    border-radius: 0 0 .5rem .5rem;
+}
+
+.skip-to-content-link:focus {
+    translate: -50% 0%;
+}
+
+/*
+* -------------------------------------------------------------
+* Utilities
+* -------------------------------------------------------------
+*/
+.flow > * + * {
+    margin-top: var(--space-s, 1.4em);
+}
+
+/*
+* -------------------------------------------------------------
+* Layout
+* -------------------------------------------------------------
+*/
+
+/* Section */
+.section {
+    width: min(var(--layout-width), 100% - var(--space-l, 2rem));
+    margin: var(--space-m, 2rem) auto;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(
+        var(--grid-placement, auto-fill),
+        minmax(var(--grid-min-tem-size, 16rem), 1fr)
+    );
+    gap: var(--space-m, 2rem);
+}
+
+/* Two column grid */
+.grid[data-layout="50-50"] {
+    --grid-placement: auto-fit;
+    --grid-min-tem-size: clamp(16rem, 40vw, 20rem);
+}
+
+/* Three column grid */
+.grid[data-layout="33-33-33"] {
+    --grid-placement: auto-fit;
+    --grid-min-tem-size: clamp(16rem, 33%, 16rem);
+}
+
+/*
+* -------------------------------------------------------------
+* Reusable components.
+* -------------------------------------------------------------
+*/
+
+/* Card */
+.card {
+    padding: var(--space-m, 1.4em) var(--space-s, 1.4em);
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    border-radius: 1rem;
+}
+
+.card img {
+    border-radius: .5rem;
+}
+
+/* Button */
+.button {
+    display: inline-block;
+    padding: .5em 1em;
+    border-radius: .5rem;
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    text-decoration: none;
+}
+
+/*
+* -------------------------------------------------------------
+* Sections
+* -------------------------------------------------------------
+*/
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    padding: var(--space-s) var(--space-xl);
+}
+
+.header__logo {
+    width: 3rem;
+}
+
+.header__navigation {
+    flex: 1;
+    width: 3rem;
+}
+
+.header__navigation ul {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    gap: var(--space-m);
+}
+
+/* Header */
+.footer {
+    padding: var(--space-m) 0;
+    text-align: center;
+}
